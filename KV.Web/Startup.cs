@@ -34,8 +34,14 @@ namespace KV.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseMvc();
+            //app.UseMvc(r=> {
+            //    r.MapRoute(
+            //        name:"default",
+            //        template:"{controller}/{action}/{id}",
+            //        defaults:new { Controller="UserKV",Action="Index"}
+            //   );
+            //});
         }
     }
 }
