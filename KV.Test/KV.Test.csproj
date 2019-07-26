@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KV.DB\KV.DB.csproj" />
+    <ProjectReference Include="..\KV.DLL\KV.DLL.csproj" />
     <ProjectReference Include="..\KV.Entities\KV.Entities.csproj" />
   </ItemGroup>
 
