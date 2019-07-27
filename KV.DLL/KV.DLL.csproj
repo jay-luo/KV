@@ -13,12 +13,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\KV.DB\KV.DB.csproj" />
+    <ProjectReference Include="..\KV.Entities\KV.Entities.csproj" />
+    <ProjectReference Include="..\KV.ViewModel\KV.ViewModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Source\_city.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Source\最新_city.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties source_4_3city_1json__JsonSchema="http://json-schema.org/draft-04/schema" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -1,6 +1,4 @@
-﻿using KV.DB;
-using KV.Entities.Models;
-using System;
+﻿using System;
 using System.Linq;
 using KV.DLL;
 namespace KV.Test
@@ -9,9 +7,8 @@ namespace KV.Test
     {
         static void Main(string[] args)
         {
-            BLLWeather bw = new BLLWeather();
-            DBEntity db = new DBEntity();
-            var bk= db.Query<Bookinfo>().ToList();
+            BLLWeather we = new BLLWeather();
+            we.GetWeatherByAreaName("赣州");
             Console.WriteLine("Hello World!");
         }
     }

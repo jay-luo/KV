@@ -17,18 +17,22 @@ namespace KV.Entities.Models
 
         public virtual DbSet<BarCode> BarCode { get; set; }
         public virtual DbSet<Bookinfo> Bookinfo { get; set; }
+        public virtual DbSet<DateWeather> DateWeather { get; set; }
         public virtual DbSet<Timage> Timage { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=112.74.53.114;Initial Catalog=BookLibrary;User ID=sa;Password=`1qaz!QAZ;MultipleActiveResultSets=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasAnnotation("ProductVersion", "2.2.1-servicing-10028");
+
             modelBuilder.Entity<BarCode>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -113,6 +117,31 @@ namespace KV.Entities.Models
                     .HasColumnName("translation")
                     .HasMaxLength(200)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<DateWeather>(entity =>
+            {
+                entity.ToTable("Date_Weather");
+
+                entity.HasIndex(e => e.CityCode)
+                    .HasName("IX_Date_Weather");
+
+                entity.HasIndex(e => e.DailyDate)
+                    .HasName("IX_Date_Weather_Date");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Body).IsUnicode(false);
+
+                entity.Property(e => e.CityCode)
+                    .IsRequired()
+                    .HasColumnName("City_Code")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreateTime).HasColumnType("datetime");
+
+                entity.Property(e => e.DailyDate).HasColumnType("date");
             });
 
             modelBuilder.Entity<Timage>(entity =>

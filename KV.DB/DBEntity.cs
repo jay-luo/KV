@@ -7,9 +7,10 @@ namespace KV.DB
 {
     public class DBEntity
     {
-        BookLibraryContext _context = null;
+        [ThreadStatic]
+        static  BookLibraryContext _context = null;
         public DBEntity() {
-            _context = new BookLibraryContext();
+           if(_context==null) _context = new BookLibraryContext();
         }
         public void Insert<T>(T t) where T : class {
             _context.Set<T>().Add(t);
