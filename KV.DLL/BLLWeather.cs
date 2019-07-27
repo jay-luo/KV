@@ -26,22 +26,24 @@ namespace KV.DLL
                 cylist= JsonConvert.DeserializeObject<List<city>>(a);
             }
         }
-        public Response<string> GetWeatherByAreaName(string areaName) {
+        public Response<Root> GetWeatherByAreaName(string areaName) {
             var db = new DBEntity();
             var ct = cylist.FirstOrDefault(x => x.city_name == areaName);
-            if (ct == null) return new Response<string>() {Code=-1,Message="该城市暂未收录进系统" };
-            if (string.IsNullOrEmpty(ct.city_code)) return new Response<string>() {Code=-1,Message="查询范围过大,请缩小查询区域" };
+            if (ct == null) return new Response<Root>() {Code=-1,Message="该城市暂未收录进系统" };
+            if (string.IsNullOrEmpty(ct.city_code)) return new Response<Root>() {Code=-1,Message="查询范围过大,请缩小查询区域" };
             var we = db.Query<DateWeather>().FirstOrDefault(x => x.DailyDate == DateTime.Now.Date && x.CityCode == ct.city_code);
             if (we == null) {
                 string url = string.Format("http://t.weather.sojson.com/api/weather/city/{0}", ct.city_code);
-               var root =HttpHelper.Request<Root>(url,"get");
-                InsertWeather(ct.city_code,JsonConvert.SerializeObject(root));
+                var root =HttpHelper.Request<Root>(url,"get");
+                if (root.status == 200) {
+                    InsertWeather(ct.city_code, JsonConvert.SerializeObject(root));
+                }
+                return new Response<Root>() { Code = 0, Data = root };
             }
             else
             {
-
+                return new Response<Root>() {Code=0,Data=JsonConvert.DeserializeObject<Root>(we.Body) };
             }
-            return new Response<string>() { };
         }
         public void InsertWeather(string cityCode,string body) {
             DBEntity db = new DBEntity();
