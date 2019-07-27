@@ -10,7 +10,7 @@ using KV.DLL;
 
 namespace KV.Web.Controllers
 {
-    [Route("/[controller]/[Action]/[id]")]
+    [Route("/[controller]/[Action]")]
     [ApiController]
     public class UserKVController : ControllerBase
     {

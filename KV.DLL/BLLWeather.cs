@@ -18,7 +18,7 @@ namespace KV.DLL
             }
         }
         private void InitLoad() {
-            string path = Environment.CurrentDirectory+"/Source/"+ "_city.json";
+            string path = Environment.CurrentDirectory + "/Source/" + "_city.json";
             FileStream stream = new FileStream(path,FileMode.Open,FileAccess.Read);
             using (StreamReader reader=new StreamReader(stream, Encoding.UTF8))
             {
