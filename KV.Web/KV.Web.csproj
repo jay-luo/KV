@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
@@ -29,5 +30,7 @@
     <ProjectReference Include="..\KV.DLL\KV.DLL.csproj" />
     <ProjectReference Include="..\KV.Entities\KV.Entities.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="http://json.schemastore.org/behat" /></VisualStudio></ProjectExtensions>
 
 </Project>

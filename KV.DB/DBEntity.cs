@@ -2,6 +2,7 @@
 using KV.Entities.Models;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace KV.DB
 {

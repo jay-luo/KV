@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KV.Web", "KV.Web\KV.Web.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KV.DB", "KV.DB\KV.DB.csproj", "{18CA9AA1-3211-476D-ACD6-3C161608ABB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KV.Test", "KV.Test\KV.Test.csproj", "{84B33582-C41E-412E-B58B-E803EB4E42D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KV.Test", "KV.Test\KV.Test.csproj", "{84B33582-C41E-412E-B58B-E803EB4E42D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KV.S.F", "KV.S.F\KV.S.F.csproj", "{DCC97599-DC2B-4B27-A1C2-C789C61CA638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KV.F.Code", "KV.F.Code\KV.F.Code.csproj", "{57FE25F1-DDA6-4257-AA1A-07DA23503F20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{84B33582-C41E-412E-B58B-E803EB4E42D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84B33582-C41E-412E-B58B-E803EB4E42D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84B33582-C41E-412E-B58B-E803EB4E42D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC97599-DC2B-4B27-A1C2-C789C61CA638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC97599-DC2B-4B27-A1C2-C789C61CA638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC97599-DC2B-4B27-A1C2-C789C61CA638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC97599-DC2B-4B27-A1C2-C789C61CA638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57FE25F1-DDA6-4257-AA1A-07DA23503F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57FE25F1-DDA6-4257-AA1A-07DA23503F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57FE25F1-DDA6-4257-AA1A-07DA23503F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57FE25F1-DDA6-4257-AA1A-07DA23503F20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

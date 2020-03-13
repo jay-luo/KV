@@ -26,7 +26,7 @@ namespace KV.DLL
                 cylist= JsonConvert.DeserializeObject<List<city>>(a);
             }
         }
-        public Response<Root> GetWeatherByAreaName(string areaName) {
+        public  Response<Root> GetWeatherByAreaName(string areaName) {
             var db = new DBEntity();
             var ct = cylist.FirstOrDefault(x => x.city_name == areaName);
             if (ct == null) return new Response<Root>() {Code=-1,Message="该城市暂未收录进系统" };
